@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Dashboard</title>
+
+
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link th:href="@{/CSS/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<h1 class="text-center bg-info " >ToDoList</h1>
+<ul class=" bg-secondary nav navcustom   justify-content-end ">
+  <li class="nav-item">
+    <a th:href="@{/tasks/addtasks}"  class="nav-link active  text-white" aria-current="page" href="#">ADD</a>
+  </li>
+  <li class="nav-item">
+    <a th:href="@{/tasks/dashboards}" class="nav-link  text-white" href="#">DASHBOARD</a>
+  </li>
+  <li class="nav-item">
+    <a th:href="@{/tasks/profile}" class="nav-link  text-white" href="#"  >PROFILE</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link  text-white" th:href="@{/logout}">LOGOUT</a>
+  </li>
+
+</ul>
+
+<div class="alert alert-primary text-secondary" role="alert">
+ <b>Total Pending tasks.. <span  th:text="${totalcount}"></span></b>
+</div>
+<h3 style="text-align:center;"><i>Your Tasklist</i></h3>
+
+                <div class="tester"> 
+                <div th:if="${totalcount== 0}" class="alert alert-danger" role="alert">
+  <p class="taskcountnull"><b>No task added in the list.Please add your task</b></p>
+</div>     
+                      
+                      
+                      <div  th:each="taskdisplay : ${tasksend}"  class="accordion accordion-flush" id="accordionFlushExample">
+
+
+  <div class="accordion-item border border-secondary border-2 " style="margin-bottom:20px ">
+    <h2 class="accordion-header" id="flush-headingThree">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree" > 
+      <span class="taskheading1 text-secondary" th:text= "${taskdisplay.Hheading}"></span>
+      
+      </button>
+    </h2>
+    <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+      <div class="accordion-body taskdesc"><p th:text="${taskdisplay.Ddescription}"></div>
+      <div class="bg-secondary " >
+      <p class="text-white taskdate"  th:text="${taskdisplay.Ddate}"></p>
+      <a th:href="@{${'/tasks/delete/' + taskdisplay.Iid}}" class="btn btn-danger text-white" role="button"><b>DELETE</b></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<a th:href="@{/tasks/addtasks}" class="btn btn-info text-secondary deletetask" role="button"><b>ADD TASK</b></a>
+
+
+</div>
+                      
+
+
+
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

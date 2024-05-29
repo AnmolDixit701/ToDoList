@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Add Task</title>
+
+
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link th:href="@{/CSS/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<h1 class="text-center bg-info " >ToDoList</h1>
+<ul class=" bg-secondary nav justify-content-end ">
+  <li class="nav-item">
+    <a th:href="@{/tasks/addtasks}"  class="nav-link active  text-white" aria-current="page" href="#">ADD</a>
+  </li>
+  <li class="nav-item">
+    <a th:href="@{/tasks/dashboards}" class="nav-link  text-white" href="#">DASHBOARD</a>
+  </li>
+  <li class="nav-item">
+    <a th:href="@{/tasks/profile}" class="nav-link  text-white" href="#"  >PROFILE</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link  text-white" th:href="@{/logout}">LOGOUT</a>
+  </li>
+
+</ul>
+
+<h1 class="addtaskheading text-secondary">Task adder</h1>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+<form   th:action="@{/tasks/taskadded}" th:object="${tasker}" method="post">
+
+
+       <label for="heading" class="addtasklabel"><b>Heading:</b></label><br>
+        <input type="text"  class="addtaskinput   text-secondary"  id="heading" th:field="*{Heading}" />
+
+        <br/>
+       <label for="description"  class="addtasklabel"><b>Description:</b></label>
+        <textarea   class="addtaskinput  text-secondary" id="description" th:field="*{Description}"></textarea>
+       
+
+        <br/>
+
+        <button type="submit" class="btn btn-success addtasksavebutton" >Save</button>
+    </form>
+</div>
+</div>
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

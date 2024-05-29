@@ -1,0 +1,121 @@
+*{
+	margin:0px 0px 0px 0px;
+	padding:0px 0px 0px 0px;
+}
+.tester{
+	margin-left:25%;
+	margin-right:25%
+}
+.taskheading1{
+	display:inline-block;
+	  font-weight: bold;
+	  text-transform: uppercase;
+	margin-left:30px;
+}
+
+.taskdesc{
+	font-weight:bold;
+	font-style:italic;
+}
+.taskdate{
+	padding-left:30px;
+	padding-top:10px;
+
+	display:inline-block;
+	width:60%;
+}
+
+.deletetask{
+	display:block;
+	width:50%;
+	text-align:center;
+	margin:auto auto auto auto;
+	
+}
+.taskcountnull{
+	text-align:center;
+	font-style:italic;
+	padding-top:0px;
+	padding-bottom:0px;
+}
+.profileinfromation{
+	text-align:center;
+	font-weight:bold;
+	font-style:italic;
+	padding-top:10px;
+	
+}
+
+.profilecontainer{
+	margin-left:400px;
+	margin-right:400px;
+	
+	
+}
+
+.profilesubcontainer{
+	padding-top:20px;
+	margin:10px 0px 30px 5px;
+	
+	
+}
+
+.labeldisplay{
+	display:inline-block;
+	padding:3px auto 3px auto;
+	width:30%;
+	text-align:center;
+	text-transform:uppercase;
+	font-weight:bold;
+}
+
+.userinfo{
+	display:inline-block;
+	width:60%;
+	text-align:center;
+	font-weight:bold;
+	font-style:italic;
+	
+}
+
+.profileditbutton{
+	display:block;
+	width:70%;
+	margin-left:100px;
+	margin-bottom:30px;
+}
+
+.profileeditinput{
+	border:3px solid grey;
+	margin:5px auto 2px auto;
+	font-weight:600;
+}
+
+.addtaskheading{
+	text-align:center;
+	text-transform:uppercase;
+	font-style:italic;
+}
+
+.addtasklabel{
+	display:block;
+	margin:5px auto 3px 20px;
+}
+
+.addtaskinput{
+	background-color: rgb(134,217,245);
+	width:80%;
+	font-weight:600;
+	padding: 10px 15px 10px 15px;
+}
+
+.addtasksavebutton{
+	margin:30px auto auto 30%;
+	padding:10px 30px 10px 30px;
+	border:none;
+}
+
+.navcustom{
+	margin:0px 0px 0px 0px;
+}
+

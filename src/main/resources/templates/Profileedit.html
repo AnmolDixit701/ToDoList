@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+<title>Profile Update</title>
+
+
+
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<link th:href="@{/CSS/style.css}" rel="stylesheet" />
+</head>
+<body>
+
+<h1 class="text-center bg-info " >ToDoList</h1>
+<ul class=" bg-secondary nav justify-content-end ">
+  <li class="nav-item">
+    <a th:href="@{/tasks/addtasks}"  class="nav-link active  text-white" aria-current="page" href="#">ADD</a>
+  </li>
+  <li class="nav-item">
+    <a th:href="@{/tasks/dashboards}" class="nav-link  text-white" href="#">DASHBOARD</a>
+  </li>
+  <li class="nav-item">
+    <a th:href="@{/tasks/profile}" class="nav-link  text-white" href="#"  >PROFILE</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link  text-white" th:href="@{/logout}">LOGOUT</a>
+  </li>
+ <!--<span th:text="${#authentication.name}></span>  -->
+</ul>
+
+
+
+<form class="container w-50"  action="#" th:action="@{/tasks/profileeditsave}" method="post" th:object="${UserInformaion}">
+ <p th:if="${errorMessage}" class="error" th:text="${errorMessage}"></p>
+  <!-- first name -->
+  <div class="form-group">
+    <label for="firstname"><b>First Name</b></label>
+    <input type="text" class="form-control text-success profileeditinput" id="firstname" aria-describedby="emailHelp" th:field="*{FirstName}" th:placeholder="${UserInformaion.FirstName}"  >
+  </div>
+  
+   
+  <div class="form-group">
+    <label for="lastname"><b>Last Name</b></label>
+    <input type="text" class="form-control text-success profileeditinput" id="lastname" aria-describedby="emailHelp" th:field="*{LastName}" th:placeholder="${UserInformaion.LastName}"  >
+  </div>
+  
+  
+  <div class="form-group">
+    <label for="description"><b>Description</b></label>
+    <input type="text" class="form-control profileeditinput text-success" id="Description" aria-describedby="emailHelp" th:field="*{Description}"  th:placeholder="${UserInformaion.Description}" >
+  </div>
+  
+  
+  <div class="form-group">
+    <label for="goal"><b>Goal</b></label>
+    <input type="text" class="form-control profileeditinput text-success" id="goal" aria-describedby="emailHelp"  th:field="*{goal}" th:placeholder="${UserInformaion.goal}"   >
+  </div>
+  
+  
+
+  
+  <div style="margin-top:20px;margin-bottom:20px;">
+   <button type="submit" class="btn btn-success">Save</button>
+  </div>
+  
+ 
+   
+</form>
+
+
+
+
+
+</body>
+</html>
